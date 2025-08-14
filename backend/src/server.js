@@ -5,7 +5,6 @@ const connectDB = require("./config/db.js");
 const notesRoutes = require("./routes/notesRoutes.js");
 
 dotenv.config();
-connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -27,4 +26,5 @@ app.use("/api/notes", notesRoutes);
 // Server start
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  connectDB();
 });
