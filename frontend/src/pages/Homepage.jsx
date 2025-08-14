@@ -9,7 +9,7 @@ const Homepage = () => {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/notes");
+      const res = await axios.get("https://keepify-backend.onrender.com/api/notes");
       setNotes(res.data);
       setLoading(false);
     } catch (error) {
@@ -22,7 +22,7 @@ const Homepage = () => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
 
     try {
-      await axios.delete(`http://localhost:5001/api/notes/delete/${id}`);
+      await axios.delete(`https://keepify-backend.onrender.com/api/notes/delete/${id}`);
       setNotes(notes.filter((note) => note._id !== id));
     } catch (error) {
       console.error("Error deleting note:", error);

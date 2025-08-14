@@ -11,7 +11,7 @@ const Createpage = () => {
   const createNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/notes/create", {
+      await axios.post("https://keepify-backend.onrender.com/api/notes/create", {
         title,
         content,
       });
