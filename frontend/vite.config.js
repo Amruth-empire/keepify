@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/api": {
           target: isProd
-            ? "https://keepify-ioft.vercel.app" // production (Vercel)
+            ? "https://keepify-ioft.vercel.app/" // production (Vercel)
             : "http://localhost:5001", // development (local backend)
           changeOrigin: true,
           secure: isProd, // true only in prod
