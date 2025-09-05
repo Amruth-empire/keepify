@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    proxy: {
+      '/api': {
+        // Use your deployed Vercel backend
+        target: 'https://keepify-ioft.vercel.app',
+        changeOrigin: true,
+        secure: true, // true because Vercel uses HTTPS
+      },
+    },
+  },
+});

@@ -15,7 +15,9 @@ app.use(express.json());
 // Enable CORS so frontend (different port) can call backend
 app.use(
   cors({
-    origin: "https://keepify-frontend.onrender.com", // your Vite frontend URL
+    origin: ["http://localhost:5173", 
+      "https://note-keepify.vercel.app" , 
+      "https://keepify-frontend.onrender.com"], // your Vite frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );

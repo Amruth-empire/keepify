@@ -13,7 +13,7 @@ const Notesdetailpage = () => {
 
   const fetchNote = useCallback(async () => {
     try {
-      const res = await axios.get(`https://keepify-backend.onrender.com/api/notes/${id}`);
+      const res = await axios.get(`/api/notes/${id}`);
       setNote(res.data.note);
       setTitle(res.data.note.title);
       setContent(res.data.note.content);
@@ -25,7 +25,7 @@ const Notesdetailpage = () => {
   const updateNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://keepify-backend.onrender.com/api/notes/update/${id}`, {
+      await axios.put(`/api/notes/update/${id}`, {
         title,
         content,
       });
